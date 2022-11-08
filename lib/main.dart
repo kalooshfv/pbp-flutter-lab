@@ -57,6 +57,14 @@ class _MyHomePageState extends State<MyHomePage> {
     }
   }
 
+  bool _isVisible() {
+    if (_counter != 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
+
   void _incrementCounter() {
     setState(() {
       // This call to setState tells the Flutter framework that something has
@@ -123,15 +131,17 @@ class _MyHomePageState extends State<MyHomePage> {
         )),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: Padding(
-            padding: const EdgeInsets.all(30.0),
+            padding: const EdgeInsets.all(15.0),
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: <Widget>[
-                  FloatingActionButton(
-                    onPressed: _decrementCounter,
-                    tooltip: 'Decrement',
-                    child: const Icon(Icons.remove, color: Colors.white),
-                  ),
+                  Visibility(
+                      visible: _isVisible(),
+                      child: FloatingActionButton(
+                        onPressed: _decrementCounter,
+                        tooltip: 'Decrement',
+                        child: const Icon(Icons.remove, color: Colors.white),
+                      )),
                   FloatingActionButton(
                       onPressed: _incrementCounter,
                       tooltip: 'Increment',
