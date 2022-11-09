@@ -5,15 +5,15 @@ Flutter widgets are powerful objects inspired from React that help build an appl
 A widget in flutter has a "state" that is stored in a State object. When a widget's state changes, the widget rebuilds its description which in turn changes its appearance and contents. A StatefulWidget object allows that widget's state to change, hence its possible responsiveness to user input (e.g. Checkbox, Slider, Form, TextField). A StatelessWidget object never changes its state, and will stay the same regardless of user input (e.g. Icon, IconButton, Text). <br>
 
 ## 2. Mention what widgets you use in this project and explain their functions.
-The widgets I've used for this project is:
-a. StatefulWidget: a widget that allows its state to change <br>
-b. Scaffold: a class that provides many properties suitable to be a parent to many other widgets <br>
-c. Center: a widget that centers its children within itself <br>
-d. Column: a widget that arranges its children vertically (main axis) and possibly horizontally (cross axis) <br>
-e. Row: a widget that arranges its children horizontally (main axis) and possibly vertically (cross axis) <br>
-f. Text: a widget that displays and styles text <br>
-g. FloatingActionButton: a circular button that hovers over content to promote a primary action in an application <br>
-h. Visibility: a widget that modifies the visibility properties of its children <br>
+The widgets I've used for this project is: <br>
+a) StatefulWidget: a widget that allows its state to change <br>
+b) Scaffold: a class that provides many properties suitable to be a parent to many other widgets <br>
+c) Center: a widget that centers its children within itself <br>
+d) Column: a widget that arranges its children vertically (main axis) and possibly horizontally (cross axis) <br>
+e) Row: a widget that arranges its children horizontally (main axis) and possibly vertically (cross axis) <br>
+f) Text: a widget that displays and styles text <br>
+g) FloatingActionButton: a circular button that hovers over content to promote a primary action in an application <br>
+h) Visibility: a widget that modifies the visibility properties of its children <br>
 <br>
 
 ## 3. What is the function of setState()? Explain what variables can be affected by the function.
