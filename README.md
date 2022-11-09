@@ -6,14 +6,14 @@ A widget in flutter has a "state" that is stored in a State object. When a widge
 
 ## 2. Mention what widgets you use in this project and explain their functions.
 The widgets I've used for this project is:
-> StatefulWidget: a widget that allows its state to change
-> Scaffold: a class that provides many properties suitable to be a parent to many other widgets
-> Center: a widget that centers its children within itself
-> Column: a widget that arranges its children vertically (main axis) and possibly horizontally (cross axis)
-> Row: a widget that arranges its children horizontally (main axis) and possibly vertically (cross axis)
-> Text: a widget that displays and styles text
-> FloatingActionButton: a circular button that hovers over content to promote a primary action in an application 
-> Visibility: a widget that modifies the visibility properties of its children
+a. StatefulWidget: a widget that allows its state to change <br>
+b. Scaffold: a class that provides many properties suitable to be a parent to many other widgets <br>
+c. Center: a widget that centers its children within itself <br>
+d. Column: a widget that arranges its children vertically (main axis) and possibly horizontally (cross axis) <br>
+e. Row: a widget that arranges its children horizontally (main axis) and possibly vertically (cross axis) <br>
+f. Text: a widget that displays and styles text <br>
+g. FloatingActionButton: a circular button that hovers over content to promote a primary action in an application <br>
+h. Visibility: a widget that modifies the visibility properties of its children <br>
 <br>
 
 ## 3. What is the function of setState()? Explain what variables can be affected by the function.
