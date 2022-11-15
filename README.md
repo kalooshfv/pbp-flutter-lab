@@ -31,5 +31,18 @@ Moving forward, I set a private function in the State object named btnText that 
 Last but not least, I included a Visibility widget to be the parent of the FloatingActionButton widget of the decrement button I created previously. I then created another private function isVisible that returns a negative boolean value when the counter reaches 0. The visible property on the previously made Visibility widget will then depend on the isVisible function's output. <br>
 Finally, I git-add-commit-pushed my project onto GitHub.
 
+# Assignment 8: Essay Answers
+
+## 1. Explain the difference between Navigator.push and Navigator.pushReplacement.
+
+## 2. List all the widgets you used in this project and explain their functions.
+
+## 3. Name the types of events that exist in Flutter (example: onPressed).
+
+## 4. Explain how the Navigator works in "switching" pages of a Flutter application.
+
+## 5. Explain how you implemented the checking list above.
+
+
 
 
