@@ -84,6 +84,6 @@ Whilst working, I also modified the imports as I went so that every dart file is
 
 Lastly, I started creating my drawer and navigator widgets. The Drawer I created, aside from Columns for the purposes of alignment, uses ListTiles that are able to be clicked. When clicked, the ListTiles uses the Navigation widget to move between pages that extend the StatefulWidget. The Navigation method used is pushReplacement to prevent the stack from filling up excessively. I then extracted the widget into a class and moved it into a separate file called drawer.dart. <br>
 
-# References Assignment 8:
-a) https://blog.logrocket.com/understanding-flutter-navigation-routing/ <br>
-b) https://blog.codemagic.io/flutter-navigator2/ <br>
+## References Assignment 8:
+https://blog.logrocket.com/understanding-flutter-navigation-routing/ <br>
+https://blog.codemagic.io/flutter-navigator2/ <br>
