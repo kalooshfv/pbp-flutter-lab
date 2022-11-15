@@ -34,15 +34,56 @@ Finally, I git-add-commit-pushed my project onto GitHub.
 # Assignment 8: Essay Answers
 
 ## 1. Explain the difference between Navigator.push and Navigator.pushReplacement.
+Navigator.push will plainly push a route onto the navigator stack. On the other hand, Navigator.pushReplacement will dispose the previous route after the new, requested route is pushed onto the navigator stack. <br>
 
 ## 2. List all the widgets you used in this project and explain their functions.
+a) StatefulWidget: a widget that allows its state to change <br>
+b) Scaffold: a class that provides many properties suitable to be a parent to many other widgets <br>
+c) Center: a widget that centers its children within itself <br>
+d) Column: a widget that arranges its children vertically (main axis) and possibly horizontally (cross axis) <br>
+e) Row: a widget that arranges its children horizontally (main axis) and possibly vertically (cross axis) <br>
+f) Text: a widget that displays and styles text <br>
+g) FloatingActionButton: a circular button that hovers over content to promote a primary action in an application <br>
+h) Visibility: a widget that modifies the visibility properties of its children <br>
+i) Drawer: a widget that provides a menu which can be pulled out by clicking an icon <br>
+j) Padding: a wrapper widget that provides padding properties <br>
+k) Align: a wrapper widget that provides alignment properties <br>
+l) Form: a widget which contains inputs and has the ability to validate and save their contents <br>
+m) TextFormField: a form input widget that accepts text <br>
+n) DropdownButtonFormField: a form input widget that provides a toggleable, contextual overlays for displaying a list of choices <br>
+o) TextButton: a widget that displays a button and sets its functionality <br>
+p) Expanded: a widget expands a child of a Row, Column, or Flex so that the child fills the available space <br>
+q) Container: a general wrapper widget with many properties <br>
+r) ListView: a scrolling widget that displays list widgets <br>
+s) ListTile: a list widget that has a start, center, and end section <br>
+t) Navigator: a widget that manages a set of pages with a stack discipline <br>
 
 ## 3. Name the types of events that exist in Flutter (example: onPressed).
+a) onPressed: event where a widget (usually a button) is pressed <br>
+b) onChanged: event where the contents of a widget changes <br>
+c) onSaved: event that calls an optional method when the form is saved via FormState.save <br>
+d) onTap: event where a widget (likely anything but a button) is tapped <br>
 
 ## 4. Explain how the Navigator works in "switching" pages of a Flutter application.
+The Navigator widget manages elements called routes that displays the content of pages in the flutter app. Flutter offers an imperative API (Navigator 1.0) and a declarative API (Navigator 2.0) routing mechanism. <br>
+
+In the imperative approach, the Navigator consists of a stack, a push method, and a pop method. The push method is for navigating to a newer page, while the pop method is for backtracking from the current page. The push method takes two arguments: a BuildContext (handle to the location of a widget in the widget tree) and a PageBuilder (used build the route's primary contents). The pop method only takes a BuildContext argument. <br>
+
+In the declarative approach, when a list of Page objects are provided, the Pages API sets the history stack of the Navigator declaratively. Then, the Navigator inflates the Page objects into Routes. When the Page list changes, so does the corresponding Routes. Besides that, the Navigator also takes in an onPopPage callback that pops a page, and a transitionDelegate that decides how Routes transition on or off the screen. With those, the Navigator can handle the addition and removal of pages from the history stack. <br>
 
 ## 5. Explain how you implemented the checking list above.
+First off, I wrote my Forms page. Using the lab assignment as a basis, I created forms.dart to contain my form. The form contained 2 TextFormField and 1 DropdownFormField inputs, each with validation and an onSave function. In the Form state, I included 3 properties to contain the title, amount, and budget type that is to be inputted in the form. Every time the input changes, so does the corresponding variable. The Form also contains a button that validates the inputs when clicked.<br>
 
+After creating my form, I created a file called models.dart. This file contains a class called Model that lists 3 properties that describes the budget's title, amount, and type. I also included an initialization function. Then, I created an empty list that will contain instances of Model. <br>
 
+Back to forms.dart, I initialized an empty model object. On each onSave function, that Model instance's properties are set to the 3 variables defined earlier. When the form is validated, the button runs all the save functions to modify the Model instance. The Model instance is then added into the list of Models. <br>
 
+Finally, I created my Results page in result.dart. The Results page is similar to the Homepage and Forms, with the difference being that the contents are a ListView containing the properties of each Model instance inside the budget list. Using the ListView builder, the children of the Column inside the Scaffold's body are ListItems that describes each Model's contents. <br>
 
+Whilst working, I also modified the imports as I went so that every dart file is interconnected with one another. <br>
+
+Lastly, I started creating my drawer and navigator widgets. The Drawer I created, aside from Columns for the purposes of alignment, uses ListTiles that are able to be clicked. When clicked, the ListTiles uses the Navigation widget to move between pages that extend the StatefulWidget. The Navigation method used is pushReplacement to prevent the stack from filling up excessively. I then extracted the widget into a class and moved it into a separate file called drawer.dart. <br>
+
+## References Assignment 8:
+a) https://blog.logrocket.com/understanding-flutter-navigation-routing/ <br>
+b) https://blog.codemagic.io/flutter-navigator2/ <br>
