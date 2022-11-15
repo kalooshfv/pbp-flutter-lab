@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/model.dart';
 import 'package:counter_7/form.dart';
 import 'package:counter_7/main.dart';
+import 'package:counter_7/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,48 +57,7 @@ class _MyResultPageState extends State<MyResultPage> {
         appBar: AppBar(
           title: Text(widget.title),
         ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              // Adding clickable menu
-              ListTile(
-                  title: const Text('Counter'),
-                  onTap: () {
-                    // Routing the menu to the main page
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const MyResultPage(title: 'Your Budgets')),
-                    );
-                  }),
-              ListTile(
-                title: const Text('Form'),
-                onTap: () {
-                  // Routing the menu to the form page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const MyFormPage(title: 'Add a Budget Plan')),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Budget Data'),
-                onTap: () {
-                  // Routing the menu to the form page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const MyResultPage(title: 'Budget Data')),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: drawer(),
         body: Container(
           margin: const EdgeInsets.all(10.0),
           child: Column(

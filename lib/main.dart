@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:counter_7/model.dart';
 import 'package:counter_7/form.dart';
 import 'package:counter_7/result.dart';
+import 'package:counter_7/drawer.dart';
 
 void main() {
   runApp(const MyApp());
@@ -101,48 +102,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        drawer: Drawer(
-          child: Column(
-            children: [
-              // Adding clickable menu
-              ListTile(
-                  title: const Text('Counter'),
-                  onTap: () {
-                    // Routing the menu to the main page
-                    Navigator.pushReplacement(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const MyHomePage(title: 'Counter Program')),
-                    );
-                  }),
-              ListTile(
-                title: const Text('Form'),
-                onTap: () {
-                  // Routing the menu to the form page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const MyFormPage(title: 'Add a Budget Plan')),
-                  );
-                },
-              ),
-              ListTile(
-                title: const Text('Budget Data'),
-                onTap: () {
-                  // Routing the menu to the form page
-                  Navigator.pushReplacement(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) =>
-                            const MyResultPage(title: 'Budget Data')),
-                  );
-                },
-              ),
-            ],
-          ),
-        ),
+        drawer: drawer(),
         body: Center(
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.
