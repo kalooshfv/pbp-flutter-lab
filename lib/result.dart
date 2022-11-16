@@ -86,7 +86,7 @@ class _MyResultPageState extends State<MyResultPage> {
                                 Align(
                                     alignment: Alignment.centerLeft,
                                     child: Text(budgetList[index].budgetTitle,
-                                        style: TextStyle(
+                                        style: const TextStyle(
                                             fontWeight: FontWeight.bold,
                                             fontSize: 30))),
                                 Row(
@@ -94,10 +94,7 @@ class _MyResultPageState extends State<MyResultPage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                          budgetList[index]
-                                                  .budgetAmount
-                                                  .toString() +
-                                              '\$',
+                                          '${budgetList[index].budgetAmount}\$',
                                           style: TextStyle(fontSize: 20)),
                                       Text(budgetList[index].budgetType,
                                           style: TextStyle(fontSize: 20))
