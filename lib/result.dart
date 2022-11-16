@@ -94,7 +94,10 @@ class _MyResultPageState extends State<MyResultPage> {
                                         MainAxisAlignment.spaceBetween,
                                     children: [
                                       Text(
-                                          budgetList[index].budgetAmount + '\$',
+                                          budgetList[index]
+                                                  .budgetAmount
+                                                  .toString() +
+                                              '\$',
                                           style: TextStyle(fontSize: 20)),
                                       Text(budgetList[index].budgetType,
                                           style: TextStyle(fontSize: 20))

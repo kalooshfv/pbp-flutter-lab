@@ -14,8 +14,8 @@ class MyFormPage extends StatefulWidget {
 class _MyFormPageState extends State<MyFormPage> {
   final _formKey = GlobalKey<FormState>();
   String _fullTitle = "";
-  String _amount = "";
-  String? budgetType = null;
+  int _amount = 0;
+  String? budgetType;
   List<String> budgetTypes = ['Budget', 'Income'];
 
   @override
@@ -85,13 +85,13 @@ class _MyFormPageState extends State<MyFormPage> {
                     // Added behavior when name is typed
                     onChanged: (String? value) {
                       setState(() {
-                        _amount = value!;
+                        _amount = int.parse(value!);
                       });
                     },
                     // Added behavior when data is saved
                     onSaved: (String? value) {
                       setState(() {
-                        _amount = value!;
+                        _amount = int.parse(value!);
                       });
                     },
                     // Validator as form validation
