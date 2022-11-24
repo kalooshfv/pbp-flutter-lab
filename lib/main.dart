@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/model.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/result.dart';
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/models/model.dart';
+import 'package:counter_7/pages/form.dart';
+import 'package:counter_7/pages/result.dart';
+import 'package:counter_7/pages/drawer.dart';
+import 'package:pbp_django_auth/pbp_django_auth.dart';
 
 void main() {
   runApp(const MyApp());
@@ -102,7 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
           // the App.build method, and use it to set our appbar title.
           title: Text(widget.title),
         ),
-        drawer: drawer(),
+        drawer: const drawer(),
         body: Center(
             // Center is a layout widget. It takes a single child and positions it
             // in the middle of the parent.

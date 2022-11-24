@@ -1,7 +1,8 @@
+import 'package:counter_7/pages/mywatchlist.dart';
 import 'package:flutter/material.dart';
-import 'package:counter_7/model.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/result.dart';
+import 'package:counter_7/models/model.dart';
+import 'package:counter_7/pages/form.dart';
+import 'package:counter_7/pages/result.dart';
 import 'package:counter_7/main.dart';
 
 class drawer extends StatelessWidget {
@@ -47,6 +48,18 @@ class drawer extends StatelessWidget {
                 MaterialPageRoute(
                     builder: (context) =>
                         const MyResultPage(title: 'Budget Data')),
+              );
+            },
+          ),
+          ListTile(
+            title: const Text('Watchlist'),
+            onTap: () {
+              // Routing the menu to the form page
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) =>
+                        const MyWatchlistPage(title: 'My Watchlist')),
               );
             },
           ),

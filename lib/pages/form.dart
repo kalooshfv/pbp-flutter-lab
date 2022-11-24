@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/model.dart';
-import 'package:counter_7/result.dart';
+import 'package:counter_7/models/model.dart';
+import 'package:counter_7/pages/result.dart';
 import 'package:counter_7/main.dart';
-import 'package:counter_7/drawer.dart';
+import 'package:counter_7/pages/drawer.dart';
 
 class MyFormPage extends StatefulWidget {
   const MyFormPage({super.key, required this.title});

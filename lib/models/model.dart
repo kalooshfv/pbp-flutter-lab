@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:counter_7/form.dart';
-import 'package:counter_7/result.dart';
+import 'package:counter_7/pages/form.dart';
+import 'package:counter_7/pages/result.dart';
 import 'package:counter_7/main.dart';
 
 var budgetList = [];

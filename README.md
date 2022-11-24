@@ -87,3 +87,26 @@ Lastly, I started creating my drawer and navigator widgets. The Drawer I created
 ## References Assignment 8:
 https://blog.logrocket.com/understanding-flutter-navigation-routing/ <br>
 https://blog.codemagic.io/flutter-navigator2/ <br>
+
+# Assignment 9: Essay Answers
+
+## 1. Can we retrieve JSON data without creating a model first? If yes, is it better than creating a model before retrieving JSON data?
+It is indeed possible to retrieve and serialize JSON data without using a model. This can be done via various methods, such as using code generation libraries, manually using dart convert, or using jsonDecode(). <br>
+However, it is better to use a model because it lends more control to the programmer, such as being able to know the types of values at runtime, having type safety, autocompletions, and compile-time exceptions. Apps will also just simply not compile instead of crash at runtime when an error happens. <br> 
+
+## 2. List the widgets that you used in this project and explain their functions.
+The widgets I've used, excluding the ones I've mentioned in previous assignments, are:
+a) GestureDetector: used to detect taps/presses on certain widgets <br>
+b) Future: used to fetch JSON data asynchronously from Heroku <br>
+c) ListView.builder: a quick way to generate infinite-scrolling ListViews that have a set length depending on a list (in this case, of JSON items) <br>
+d) FutureBuilder: widget that builds itself based on the latest snapshot of interaction with a Future widget <br>
+
+## 3. Explain the mechanism of retrieving data from json so it can be shown in Flutter.
+First, the URI of the to-be-fetched data is parsed and stored in a variable. Then, using jsonDecode(), the URI's contents is decoded into a JSON string. The JSON string is then converted into JSON data objects based on a model created prior. Said objects are collected inside a list to be iterated and displayed in a page. <br>
+
+## 4. Explain how you implemented the checklist above.
+I created a model called Watchlist using Quicktype first-and-foremost. After copy-and-pasting the model into a dart file, I created a Future function to fetch the data and feed it into the model to create objects inside a dart file called mywatchlist_future. <br>
+Then, I created a display page (linked to other pages via drawer) that will use the list of objects to display the title of every movie inside a ListView. After that, using a GestureDetector wrapper, I defined an onTap() event on each ListView to direct the screen to another page that displays the details of that movie. The fields/properties of that movie is passed on as variables of the detail page's state. <br>
+
+
+
