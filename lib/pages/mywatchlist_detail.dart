@@ -20,7 +20,7 @@ class MyWatchlistPageDetail extends StatefulWidget {
       required this.itemReleaseDate,
       required this.itemReview});
   final String title;
-  final String itemWatched;
+  final bool itemWatched;
   final String itemTitle;
   final String itemRating;
   final String itemReleaseDate;
@@ -32,7 +32,7 @@ class MyWatchlistPageDetail extends StatefulWidget {
 
 class _MyWatchlistPageDetailState extends State<MyWatchlistPageDetail> {
   String item_watched(input) {
-    if (input.toString() == "ItemWatched.NO") {
+    if (input == false) {
       return "No";
     } else {
       return "Yes";
@@ -59,7 +59,7 @@ class _MyWatchlistPageDetailState extends State<MyWatchlistPageDetail> {
             // Using padding of 8 pixels
             padding: const EdgeInsets.all(8.0),
             alignment: Alignment.center,
-            child: Text(widget.itemTitle, style: TextStyle(fontSize: 20)),
+            child: Text(widget.itemTitle, style: const TextStyle(fontSize: 20)),
           ),
           Container(
             alignment: Alignment.centerLeft,

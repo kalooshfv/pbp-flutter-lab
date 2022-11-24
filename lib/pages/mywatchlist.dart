@@ -9,6 +9,7 @@ import 'package:counter_7/main.dart';
 import 'package:counter_7/pages/drawer.dart';
 import 'package:counter_7/pages/mywatchlist_future.dart';
 import 'package:counter_7/pages/mywatchlist_detail.dart';
+import 'package:counter_7/models/watchlist.dart';
 
 class MyWatchlistPage extends StatefulWidget {
   const MyWatchlistPage({super.key, required this.title});
@@ -21,6 +22,14 @@ class MyWatchlistPage extends StatefulWidget {
 class _MyWatchlistPageState extends State<MyWatchlistPage> {
   @override
   Widget build(BuildContext context) {
+    Color movieColor(input) {
+      if (input == false) {
+        return Colors.red;
+      } else {
+        return Colors.blue;
+      }
+    }
+
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
@@ -53,19 +62,18 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                   return ListView.builder(
                       itemCount: snapshot.data!.length,
                       itemBuilder: (_, index) => Container(
-                            margin: const EdgeInsets.symmetric(
-                                horizontal: 16, vertical: 12),
-                            padding: const EdgeInsets.all(20.0),
-                            decoration: BoxDecoration(
-                                color: Colors.white,
-                                borderRadius: BorderRadius.circular(15.0),
-                                boxShadow: const [
-                                  BoxShadow(
-                                      color: Colors.black, blurRadius: 2.0)
-                                ]),
-                            child: Column(
-                              mainAxisAlignment: MainAxisAlignment.start,
-                              crossAxisAlignment: CrossAxisAlignment.start,
+                          margin: const EdgeInsets.symmetric(
+                              horizontal: 16, vertical: 12),
+                          padding: const EdgeInsets.all(20.0),
+                          decoration: BoxDecoration(
+                              color: movieColor(
+                                  snapshot.data![index].fields.itemWatched),
+                              borderRadius: BorderRadius.circular(15.0),
+                              boxShadow: const [
+                                BoxShadow(color: Colors.black, blurRadius: 2.0)
+                              ]),
+                          child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 GestureDetector(
                                   onTap: () {
@@ -78,8 +86,10 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                                                       '${snapshot.data![index].fields.itemTitle}',
                                                   itemTitle:
                                                       '${snapshot.data![index].fields.itemTitle}',
-                                                  itemWatched:
-                                                      '${snapshot.data![index].fields.itemWatched}',
+                                                  itemWatched: snapshot
+                                                      .data![index]
+                                                      .fields
+                                                      .itemWatched,
                                                   itemRating:
                                                       '${snapshot.data![index].fields.itemRating}',
                                                   itemReleaseDate:
@@ -95,10 +105,20 @@ class _MyWatchlistPageState extends State<MyWatchlistPage> {
                                       fontWeight: FontWeight.bold,
                                     ),
                                   ),
-                                )
-                              ],
-                            ),
-                          ));
+                                ),
+                                IconButton(
+                                  icon: const Icon(Icons.add_box_rounded),
+                                  iconSize: 25,
+                                  color: Colors.white,
+                                  onPressed: () {
+                                    setState(() {
+                                      snapshot.data![index].fields.itemWatched =
+                                          !snapshot
+                                              .data![index].fields.itemWatched;
+                                    });
+                                  },
+                                ),
+                              ])));
                 }
               }
             }));

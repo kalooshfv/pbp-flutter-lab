@@ -43,7 +43,7 @@ class Fields {
     required this.itemReview,
   });
 
-  final ItemWatched itemWatched;
+  final bool itemWatched;
   final String itemTitle;
   final int itemRating;
   final String itemReleaseDate;
@@ -66,10 +66,7 @@ class Fields {
       };
 }
 
-enum ItemWatched { NO, YES }
-
-final itemWatchedValues =
-    EnumValues({"No": ItemWatched.NO, "Yes": ItemWatched.YES});
+final itemWatchedValues = EnumValues({"No": false, "Yes": true});
 
 enum Model { MYWATCHLIST_WATCHLISTITEM }
 
